@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel Ecommerce Example</title>
-
+        <title>GC 3C 賣場</title>
+        <link rel="icon" href="/storage/{{ setting('site.logo') }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat%7CRoboto:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -47,13 +47,12 @@
             <div class="featured-section">
 
                 <div class="container">
-                    <h1 class="text-center">Laravel Ecommerce</h1>
+                    <h1 class="text-center">歡迎進入我們的賣場</h1>
 
-                    <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore vitae nisi, consequuntur illum dolores cumque pariatur quis provident deleniti nesciunt officia est reprehenderit sunt aliquid possimus temporibus enim eum hic lorem.</p>
+                    <p class="section-description text-center">以下是我們的特色產品，有筆電、平板等，歡迎隨時參觀</p>
 
                     <div class="text-center button-container">
-                        <a href="#" class="button">Featured</a>
-                        <a href="#" class="button">On Sale</a>
+                        <a href="javascript:void(0)" class="button">特色商品</a>
                     </div>
 
                     {{-- <div class="tabs">
@@ -77,7 +76,7 @@
                     </div> <!-- end products -->
 
                     <div class="text-center button-container">
-                        <a href="{{ route('shop.index') }}" class="button">View more products</a>
+                        <a href="{{ route('shop.index') }}" class="button">瀏覽更多的商品</a>
                     </div>
 
                 </div> <!-- end container -->
