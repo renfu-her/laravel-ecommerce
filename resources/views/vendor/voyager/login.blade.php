@@ -86,16 +86,6 @@
 
               <div style="clear:both"></div>
 
-
-              <div style="margin-top: 10px;">
-                <div><strong>Email: </strong>adminweb@adminweb.com</div>
-                <div><strong>Password: </strong>password</div>
-              </div>
-
-              <div style="margin-top: 10px;"><strong>Note: </strong>A lot of the functionality for this demo has been disabled: For example, deleting data and browsing/editing users and roles. If you would like full access, install it locally with the instructions found on the GitHub Repo.</div>
-
-              <div style="margin-top: 10px;">A daily CRON job is scheduled at midnight to reset all the dummy data to a default state.</div>
-
               @if(!$errors->isEmpty())
               <div class="alert alert-red">
                 <ul class="list-unstyled">

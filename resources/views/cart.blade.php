@@ -52,13 +52,13 @@
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
 
-                                <button type="submit" class="cart-options">Remove</button>
+                                <button type="submit" class="cart-options">移除</button>
                             </form>
 
                             <form action="{{ route('cart.switchToSaveForLater', $item->rowId) }}" method="POST">
                                 {{ csrf_field() }}
 
-                                <button type="submit" class="cart-options">Save for Later</button>
+                                <button type="submit" class="cart-options">儲存稍後購買</button>
                             </form>
                         </div>
                         <div>
@@ -68,7 +68,7 @@
                                 @endfor
                             </select>
                         </div>
-                        <div>{{ presentPrice($item->subtotal) }}</div>
+                        <div>{!! presentPrice($item->subtotal) !!}</div>
                     </div>
                 </div> <!-- end cart-table-row -->
                 @endforeach
@@ -95,7 +95,7 @@
 
                 <div class="cart-totals-right">
                     <div>
-                        Subtotal <br>
+                        價格 <br>
                         @if (session()->has('coupon'))
                             Code ({{ session()->get('coupon')['name'] }})
                             <form action="{{ route('coupon.destroy') }}" method="POST" style="display:block">
@@ -104,34 +104,34 @@
                                 <button type="submit" style="font-size:14px;">移除</button>
                             </form>
                             <hr>
-                            New Subtotal <br>
+                            新的價錢 <br>
                         @endif
-                        Tax ({{config('cart.tax')}}%)<br>
-                        <span class="cart-totals-total">Total</span>
+{{--                        含稅 ({{config('cart.tax')}}%)<br>--}}
+                        <span class="cart-totals-total">總價</span>
                     </div>
                     <div class="cart-totals-subtotal">
-                        {{ presentPrice(Cart::subtotal()) }} <br>
+                        {!! presentPrice(Cart::subtotal()) !!} <br>
                         @if (session()->has('coupon'))
                             -{{ presentPrice($discount) }} <br>&nbsp;<br>
                             <hr>
                             {{ presentPrice($newSubtotal) }} <br>
                         @endif
-                        {{ presentPrice($newTax) }} <br>
-                        <span class="cart-totals-total">{{ presentPrice($newTotal) }}</span>
+{{--                        {!! presentPrice($newTax) !!} <br>--}}
+                        <span class="cart-totals-total">{!! presentPrice($newTotal) !!}</span>
                     </div>
                 </div>
             </div> <!-- end cart-totals -->
 
             <div class="cart-buttons">
-                <a href="{{ route('shop.index') }}" class="button">Continue Shopping</a>
-                <a href="{{ route('checkout.index') }}" class="button-primary">Proceed to Checkout</a>
+                <a href="{{ route('shop.index') }}" class="button">繼續購物</a>
+                <a href="{{ route('checkout.index') }}" class="button-primary">直接結賬</a>
             </div>
 
             @else
 
                 <h3>購物車沒有東西!</h3>
                 <div class="spacer"></div>
-                <a href="{{ route('shop.index') }}" class="button">Continue Shopping</a>
+                <a href="{{ route('shop.index') }}" class="button">繼續購物</a>
                 <div class="spacer"></div>
 
             @endif
@@ -166,7 +166,7 @@
                             </form>
                         </div>
 
-                        <div>{{ $item->model->presentPrice() }}</div>
+                        <div>{!! $item->model->presentPrice() !!}</div>
                     </div>
                 </div> <!-- end cart-table-row -->
                 @endforeach

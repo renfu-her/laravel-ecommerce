@@ -57,7 +57,7 @@
             <h1 class="product-section-title">{{ $product->name }}</h1>
             <div class="product-section-subtitle">{{ $product->details }}</div>
             <div>{!! $stockLevel !!}</div>
-            <div class="product-section-price">{{ $product->presentPrice() }}</div>
+            <div class="product-section-price">{!! $product->presentPrice() !!}</div>
 
             <p>
                 {!! $product->description !!}
@@ -68,7 +68,7 @@
             @if ($product->quantity > 0)
                 <form action="{{ route('cart.store', $product) }}" method="POST">
                     {{ csrf_field() }}
-                    <button type="submit" class="button button-plain">Add to Cart</button>
+                    <button type="submit" class="button button-plain">增加到購物車</button>
                 </form>
             @endif
         </div>

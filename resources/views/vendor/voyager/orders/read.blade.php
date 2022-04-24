@@ -37,7 +37,7 @@
                                     <li style="margin-bottom: 10px">
                                         <div>Product Id: {{ $product->id }}</div>
                                         <div>Product Name: {{ $product->name }}</div>
-                                        <div>Product Price: {{ $product->presentPrice() }}</div>
+                                        <div>Product Price: {!! $product->presentPrice() !!}</div>
                                         <div>Product Quantity: {{ $product->pivot->quantity }}</div>
                                     </li>
                                 @endforeach

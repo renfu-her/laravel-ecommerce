@@ -38,7 +38,7 @@ class ViewProductTest extends TestCase
 
         $response = $this->get('/shop/'.$product->slug);
 
-        $response->assertSee('In Stock');
+        $response->assertSee('有庫存');
     }
 
     /** @test */

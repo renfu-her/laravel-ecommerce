@@ -36,13 +36,13 @@
         <div class="sidebar">
 
             <ul>
-              <li class="active"><a href="{{ route('users.edit') }}">My Profile</a></li>
-              <li><a href="{{ route('orders.index') }}">My Orders</a></li>
+              <li class="active"><a href="{{ route('users.edit') }}">個人資料</a></li>
+              <li><a href="{{ route('orders.index') }}">我的訂單</a></li>
             </ul>
         </div> <!-- end sidebar -->
         <div class="my-profile">
             <div class="products-header">
-                <h1 class="stylish-heading">My Profile</h1>
+                <h1 class="stylish-heading">個人資料</h1>
             </div>
 
             <div>
@@ -57,13 +57,13 @@
                     </div>
                     <div class="form-control">
                         <input id="password" type="password" name="password" placeholder="Password">
-                        <div>Leave password blank to keep current password</div>
+                        <div>如果不需要改變密碼，則請密碼處留下空白</div>
                     </div>
                     <div class="form-control">
                         <input id="password-confirm" type="password" name="password_confirmation" placeholder="Confirm Password">
                     </div>
                     <div>
-                        <button type="submit" class="my-profile-button">Update Profile</button>
+                        <button type="submit" class="my-profile-button">更新個人資料</button>
                     </div>
                 </form>
             </div>

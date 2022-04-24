@@ -39,7 +39,7 @@ class Product extends Model
 
     public function presentPrice()
     {
-        return '$'.number_format($this->price / 100, 2);
+        return '網路價: <span style="color: red">'.number_format($this->price / 100, 0) . '</span>';
     }
 
     public function scopeMightAlsoLike($query)

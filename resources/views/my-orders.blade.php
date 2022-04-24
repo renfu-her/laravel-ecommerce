@@ -36,13 +36,13 @@
         <div class="sidebar">
 
             <ul>
-              <li><a href="{{ route('users.edit') }}">My Profile</a></li>
-              <li class="active"><a href="{{ route('orders.index') }}">My Orders</a></li>
+              <li><a href="{{ route('users.edit') }}">個人資料</a></li>
+              <li class="active"><a href="{{ route('orders.index') }}">我的訂單</a></li>
             </ul>
         </div> <!-- end sidebar -->
         <div class="my-profile">
             <div class="products-header">
-                <h1 class="stylish-heading">My Orders</h1>
+                <h1 class="stylish-heading">我的訂單</h1>
             </div>
 
             <div>

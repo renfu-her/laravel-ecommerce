@@ -22,7 +22,7 @@ class ViewShopPageTest extends TestCase
 
         //Assert
         $response->assertStatus(200);
-        $response->assertSee('Featured');
+        $response->assertSee('特色商品');
     }
 
     /** @test */

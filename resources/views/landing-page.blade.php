@@ -69,7 +69,7 @@
                             <div class="product">
                                 <a href="{{ route('shop.show', $product->slug) }}"><img src="{{ productImage($product->image) }}" alt="product"></a>
                                 <a href="{{ route('shop.show', $product->slug) }}"><div class="product-name">{{ $product->name }}</div></a>
-                                <div class="product-price">{{ $product->presentPrice() }}</div>
+                                <div class="product-price">{!! $product->presentPrice() !!}</div>
                             </div>
                         @endforeach
 
@@ -83,7 +83,7 @@
 
             </div> <!-- end featured-section -->
 
-            <blog-posts></blog-posts>
+{{--            <blog-posts></blog-posts>--}}
 
             @include('partials.footer')
 

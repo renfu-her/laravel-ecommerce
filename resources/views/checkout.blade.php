@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Checkout')
+@section('title', '結帳')
 
 @section('extra-css')
     <style>
@@ -35,7 +35,7 @@
             </div>
         @endif
 
-        <h1 class="checkout-heading stylish-heading">Checkout</h1>
+        <h1 class="checkout-heading stylish-heading">結帳</h1>
         <div class="checkout-section">
             <div>
                 <form action="{{ route('checkout.store') }}" method="POST" id="payment-form">
@@ -55,7 +55,7 @@
                         <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="address">Z地址</label>
+                        <label for="address">地址</label>
                         <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" required>
                     </div>
 
@@ -131,7 +131,7 @@
 
 
             <div class="checkout-table-container">
-                <h2>Your Order</h2>
+                <h2>你的訂單</h2>
 
                 <div class="checkout-table">
                     @foreach (Cart::content() as $item)
@@ -141,7 +141,7 @@
                             <div class="checkout-item-details">
                                 <div class="checkout-table-item">{{ $item->model->name }}</div>
                                 <div class="checkout-table-description">{{ $item->model->details }}</div>
-                                <div class="checkout-table-price">{{ $item->model->presentPrice() }}</div>
+                                <div class="checkout-table-price">{!! $item->model->presentPrice() !!}</div>
                             </div>
                         </div> <!-- end checkout-table -->
 
@@ -155,27 +155,27 @@
 
                 <div class="checkout-totals">
                     <div class="checkout-totals-left">
-                        Subtotal <br>
+                        價格 <br>
                         @if (session()->has('coupon'))
                             Discount ({{ session()->get('coupon')['name'] }}) :
                             <br>
                             <hr>
                             New Subtotal <br>
                         @endif
-                        Tax ({{config('cart.tax')}}%)<br>
-                        <span class="checkout-totals-total">Total</span>
+{{--                        含稅 ({{config('cart.tax')}}%)<br>--}}
+                        <span class="checkout-totals-total">總價</span>
 
                     </div>
 
                     <div class="checkout-totals-right">
-                        {{ presentPrice(Cart::subtotal()) }} <br>
+                        {!! presentPrice(Cart::subtotal()) !!} <br>
                         @if (session()->has('coupon'))
                             -{{ presentPrice($discount) }} <br>
                             <hr>
                             {{ presentPrice($newSubtotal) }} <br>
                         @endif
-                        {{ presentPrice($newTax) }} <br>
-                        <span class="checkout-totals-total">{{ presentPrice($newTotal) }}</span>
+{{--                        {{ presentPrice($newTax) }} <br>--}}
+                        <span class="checkout-totals-total">{!! presentPrice($newTotal) !!}</span>
 
                     </div>
                 </div> <!-- end checkout-totals -->

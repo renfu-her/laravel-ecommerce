@@ -33,17 +33,17 @@
     </div>
 
     <div class="search-results-container container">
-        <h1>Search Results</h1>
-        <p class="search-results-count">{{ $products->total() }} result(s) for '{{ request()->input('query') }}'</p>
+        <h1>搜尋結果</h1>
+        <p class="search-results-count">搜尋 '{{ request()->input('query') }}' 總共 {{ $products->total() }} 筆資料 </p>
 
         @if ($products->total() > 0)
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Details</th>
-                    <th>Description</th>
-                    <th>Price</th>
+                    <th>名稱</th>
+                    <th style="width: 30%;">詳細資料</th>
+                    <th style="width: 30%">特色說明</th>
+                    <th>價錢</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,8 +51,8 @@
                     <tr>
                         <th><a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a></th>
                         <td>{{ $product->details }}</td>
-                        <td>{{ str_limit($product->description, 80) }}</td>
-                        <td>{{ $product->presentPrice() }}</td>
+                        <td>{!! str_limit($product->description, 80) !!} </td>
+                        <td>{!! $product->presentPrice() !!}</td>
                     </tr>
                 @endforeach
             </tbody>

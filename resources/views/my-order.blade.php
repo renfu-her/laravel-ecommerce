@@ -37,7 +37,7 @@
 
             <ul>
               <li><a href="{{ route('users.edit') }}">個人資訊</a></li>
-              <li class="active"><a href="{{ route('orders.index') }}">My Orders</a></li>
+              <li class="active"><a href="{{ route('orders.index') }}">我的訂單</a></li>
             </ul>
         </div> <!-- end sidebar -->
         <div class="my-profile">
