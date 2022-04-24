@@ -24,7 +24,7 @@ Route::post('/paypal-checkout', 'CheckoutController@paypalCheckout')->name('chec
 Route::get('/guestCheckout', 'CheckoutController@index')->name('guestCheckout.index');
 
 
-Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
+Route::post('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -45,4 +45,6 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/my-orders', 'OrdersController@index')->name('orders.index');
     Route::get('/my-orders/{order}', 'OrdersController@show')->name('orders.show');
+
+    Route::post('/newbpay', 'NewbpayController@index');
 });

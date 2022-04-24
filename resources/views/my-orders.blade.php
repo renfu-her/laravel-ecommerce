@@ -51,20 +51,21 @@
                     <div class="order-header">
                         <div class="order-header-items">
                             <div>
-                                <div class="uppercase font-bold">Order Placed</div>
+                                <div class="uppercase font-bold">訂單日期</div>
                                 <div>{{ presentDate($order->created_at) }}</div>
                             </div>
                             <div>
-                                <div class="uppercase font-bold">Order ID</div>
+                                <div class="uppercase font-bold">訂單編號</div>
                                 <div>{{ $order->id }}</div>
-                            </div><div>
-                                <div class="uppercase font-bold">Total</div>
-                                <div>{{ presentPrice($order->billing_total) }}</div>
+                            </div>
+                            <div>
+                                <div class="uppercase font-bold">總價</div>
+                                <div>{!! presentPrice($order->billing_total) !!}</div>
                             </div>
                         </div>
                         <div>
                             <div class="order-header-items">
-                                <div><a href="{{ route('orders.show', $order->id) }}">Order Details</a></div>
+                                <div><a href="{{ route('orders.show', $order->id) }}">訂單細項</a></div>
                                 <div>|</div>
                                 <div><a href="#">Invoice</a></div>
                             </div>
@@ -73,13 +74,13 @@
                     <div class="order-products">
                         @foreach ($order->products as $product)
                             <div class="order-product-item">
-                                <div><img src="{{ asset($product->image) }}" alt="Product Image"></div>
+                                <div><img src="{{ asset('/storage/'.$product->image) }}" alt="Product Image"></div>
                                 <div>
                                     <div>
                                         <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
                                     </div>
-                                    <div>{{ presentPrice($product->price) }}</div>
-                                    <div>Quantity: {{ $product->pivot->quantity }}</div>
+                                    <div>{!! presentPrice($product->price) !!}</div>
+                                    <div>數量: {{ $product->pivot->quantity }}</div>
                                 </div>
                             </div>
                         @endforeach
