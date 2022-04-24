@@ -180,6 +180,7 @@ class NewbpayController extends Controller
             'billing_discount' => getNumbers()->get('discount'),
             'billing_discount_code' => getNumbers()->get('code'),
             'billing_subtotal' => getNumbers()->get('newSubtotal'),
+            'payment_gateway' => 'newbpay',
             'billing_tax' => getNumbers()->get('newTax'),
             'billing_total' => getNumbers()->get('newTotal'),
             'error' => $error,
