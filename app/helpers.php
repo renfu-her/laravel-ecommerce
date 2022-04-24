@@ -4,7 +4,7 @@ use Carbon\Carbon;
 
 function presentPrice($price)
 {
-    return '網路價: <span style="color: red">'.number_format($price / 100, 0) . '</span>';
+    return '網路價: <span style="color: red">'.number_format($price, 0) . '</span>';
 }
 
 function presentDate($date)

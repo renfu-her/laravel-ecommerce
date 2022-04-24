@@ -42,7 +42,7 @@
         </div> <!-- end sidebar -->
         <div class="my-profile">
             <div class="products-header">
-                <h1 class="stylish-heading">Order ID: {{ $order->id }}</h1>
+                <h1 class="stylish-heading">訂單編號: {{ $order->id }}</h1>
             </div>
 
             <div>
@@ -50,49 +50,45 @@
                     <div class="order-header">
                         <div class="order-header-items">
                             <div>
-                                <div class="uppercase font-bold">Order Placed</div>
+                                <div class="uppercase font-bold">訂單日期</div>
                                 <div>{{ presentDate($order->created_at) }}</div>
                             </div>
                             <div>
-                                <div class="uppercase font-bold">Order ID</div>
+                                <div class="uppercase font-bold">訂單編號</div>
                                 <div>{{ $order->id }}</div>
                             </div><div>
-                                <div class="uppercase font-bold">Total</div>
-                                <div>{{ presentPrice($order->billing_total) }}</div>
+                                <div class="uppercase font-bold">總價</div>
+                                <div>{!! presentPrice($order->billing_total) !!}</div>
                             </div>
                         </div>
-                        <div>
-                            <div class="order-header-items">
-                                <div><a href="#">Invoice</a></div>
-                            </div>
-                        </div>
+{{--                        <div>--}}
+{{--                            <div class="order-header-items">--}}
+{{--                                <div><a href="#">Invoice</a></div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                     <div class="order-products">
                         <table class="table" style="width:50%">
                             <tbody>
                                 <tr>
-                                    <td>Name</td>
+                                    <td>姓名</td>
                                     <td>{{ $order->user->name }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Address</td>
-                                    <td>{{ $order->billing_address }}</td>
-                                </tr>
-                                <tr>
-                                    <td>City</td>
+                                    <td>城市</td>
                                     <td>{{ $order->billing_city }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Subtotal</td>
-                                    <td>{{ presentPrice($order->billing_subtotal) }}</td>
+                                    <td>地址</td>
+                                    <td>{{ $order->billing_address }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Tax</td>
-                                    <td>{{ presentPrice($order->billing_tax) }}</td>
+                                    <td>小計</td>
+                                    <td>{!! presentPrice($order->billing_subtotal) !!}</td>
                                 </tr>
                                 <tr>
-                                    <td>Total</td>
-                                    <td>{{ presentPrice($order->billing_total) }}</td>
+                                    <td>總價</td>
+                                    <td>{!! presentPrice($order->billing_total) !!}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -104,7 +100,7 @@
                     <div class="order-header">
                         <div class="order-header-items">
                             <div>
-                                Order Items
+                                訂單項目
                             </div>
 
                         </div>
@@ -112,13 +108,13 @@
                     <div class="order-products">
                         @foreach ($products as $product)
                             <div class="order-product-item">
-                                <div><img src="{{ asset($product->image) }}" alt="Product Image"></div>
+                                <div><img src="{{ asset('/storage/'.$product->image) }}" alt="Product Image"></div>
                                 <div>
                                     <div>
                                         <a href="{{ route('shop.show', $product->slug) }}">{{ $product->name }}</a>
                                     </div>
-                                    <div>{{ presentPrice($product->price) }}</div>
-                                    <div>Quantity: {{ $product->pivot->quantity }}</div>
+                                    <div>{!! presentPrice($product->price) !!}</div>
+                                    <div>數量: {{ $product->pivot->quantity }}</div>
                                 </div>
                             </div>
                         @endforeach

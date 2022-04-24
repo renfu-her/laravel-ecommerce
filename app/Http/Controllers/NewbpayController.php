@@ -179,9 +179,9 @@ class NewbpayController extends Controller
             'billing_name_on_card' => $request->name_on_card,
             'billing_discount' => getNumbers()->get('discount'),
             'billing_discount_code' => getNumbers()->get('code'),
-            'billing_subtotal' => getNumbers()->get('newSubtotal') / 100,
+            'billing_subtotal' => getNumbers()->get('newSubtotal'),
             'billing_tax' => getNumbers()->get('newTax'),
-            'billing_total' => getNumbers()->get('newTotal') / 100,
+            'billing_total' => getNumbers()->get('newTotal'),
             'error' => $error,
         ]);
 
