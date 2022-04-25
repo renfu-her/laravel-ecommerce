@@ -11,7 +11,7 @@
 @section('content')
 
    <div class="thank-you-section">
-       <h1>謝謝您的 <br> 選購 !</h1>
+       <h1>謝謝您的選購 !</h1>
        <p>將會有一封確認信件即將發送給您。</p>
        <div class="spacer"></div>
        <div>
