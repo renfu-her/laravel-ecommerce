@@ -14,15 +14,15 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 class NewbpayController extends Controller
 {
     // 正式
+    protected $MerchantID = 'MS3597384712';
+    protected $HashKey = 'SIA8NNqqTTu0REvN5YjjYvnXbr6a0YgQ';
+    protected $HashIV = 'PgEw5bFwq7KDxdoC';
+    protected $url = 'https://core.newebpay.com/MPG/mpg_gateway';
+    // 測試
 //    protected $MerchantID = 'MS335031431';
 //    protected $HashKey = 'oBMI6GkCEnICMBKkWV0A21nIvfLwjYYA';
 //    protected $HashIV = 'CTY0wZMQdPReih1P';
-//    protected $url = 'https://core.newebpay.com/MPG/mpg_gateway';
-    // 測試
-    protected $MerchantID = 'MS335031431';
-    protected $HashKey = 'oBMI6GkCEnICMBKkWV0A21nIvfLwjYYA';
-    protected $HashIV = 'CTY0wZMQdPReih1P';
-    protected $url = 'https://ccore.newebpay.com/MPG/mpg_gateway';
+//    protected $url = 'https://ccore.newebpay.com/MPG/mpg_gateway';
     protected $ver = '1.6';
     protected $ReturnURL = "";
     protected $NotifyURL_atm = "";
