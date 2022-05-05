@@ -14,9 +14,9 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 class NewbpayController extends Controller
 {
     // 正式
-    protected $MerchantID = 'MS3597384712';
-    protected $HashKey = 'SIA8NNqqTTu0REvN5YjjYvnXbr6a0YgQ';
-    protected $HashIV = 'PgEw5bFwq7KDxdoC';
+    protected $MerchantID = 'MS3600698738';
+    protected $HashKey = '5lENH5THF5xlW3Y2r5Qm8cOHlQaISHrB';
+    protected $HashIV = 'PVYDGmBx0eR3esxC';
     protected $url = 'https://core.newebpay.com/MPG/mpg_gateway';
     // 測試
 //    protected $MerchantID = 'MS335031431';
